@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Appache
+Comment=A small AppImage manager
+Exec=appache
+Icon=application-x-executable
+Terminal=false
+Categories=System;Utility;
