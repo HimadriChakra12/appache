@@ -508,12 +508,12 @@ void appache_activate(GtkApplication *gtk_app, gpointer user_data) {
     app->list = store_load();
 
     app->window = gtk_application_window_new(gtk_app);
-    gtk_window_set_title(GTK_WINDOW(app->window), "appache");
+    gtk_window_set_title(GTK_WINDOW(app->window), "Appache");
     gtk_window_set_default_size(GTK_WINDOW(app->window), 560, 420);
     g_object_set_data(G_OBJECT(app->window), "appache-app-ptr", app);
 
     header = gtk_header_bar_new();
-    gtk_header_bar_set_title(GTK_HEADER_BAR(header), "appache");
+    gtk_header_bar_set_title(GTK_HEADER_BAR(header), "Appache");
     gtk_header_bar_set_subtitle(GTK_HEADER_BAR(header), "AppImage manager");
     gtk_header_bar_set_show_close_button(GTK_HEADER_BAR(header), TRUE);
     gtk_window_set_titlebar(GTK_WINDOW(app->window), header);
