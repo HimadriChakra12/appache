@@ -1,5 +1,7 @@
+include fast.mk
+
+CC_BASE := clang
 PREFIX ?= /usr/local
-CC = clang
 
 PKG_CFLAGS := $(shell pkg-config --cflags gtk+-3.0 libcurl)
 PKG_LIBS   := $(shell pkg-config --libs gtk+-3.0 libcurl)

@@ -170,6 +170,19 @@ static char *xdg_data_home(void) {
     }
 }
 
+static char *xdg_config_home(void) {
+    const char *env = getenv("XDG_CONFIG_HOME");
+    if (env && *env) return xstrdup(env);
+    {
+        const char *home = getenv("HOME");
+        if (!home || !*home) {
+            struct passwd *pw = getpwuid(getuid());
+            home = pw ? pw->pw_dir : "/tmp";
+        }
+        return xasprintf("%s/.local/share", home);
+    }
+}
+
 char *appache_data_dir(void) {
     char *base = xdg_data_home();
     char *r = xasprintf("%s/appache", base);
@@ -192,7 +205,7 @@ char *appache_icons_dir(void) {
 }
 
 char *appache_store_path(void) {
-    char *d = appache_data_dir();
+    char *d = xdg_config_home();
     char *r = xasprintf("%s/store.json", d);
     free(d);
     return r;

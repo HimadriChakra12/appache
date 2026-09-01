@@ -27,7 +27,7 @@ char *unique_slug(const char *dir, const char *base, const char *suffix);
 char *appache_data_dir(void);      /* $XDG_DATA_HOME/appache or ~/.local/share/appache */
 char *appache_apps_dir(void);      /* <data_dir>/appimages                       */
 char *appache_icons_dir(void);     /* <data_dir>/icons                            */
-char *appache_store_path(void);    /* <data_dir>/store.json                       */
+char *appache_store_path(void);    /* $XDG_CONFIG_HOME/store.json                       */
 char *appache_desktop_dir(void);   /* $XDG_DATA_HOME/applications                 */
 char *appache_tmp_dir(void);       /* <data_dir>/tmp, created fresh per call      */
 
